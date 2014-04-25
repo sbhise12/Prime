@@ -1,33 +1,33 @@
-// Tests whether a number is prime
+#includen<stdio.h> 
+#include<conio.h> 
 
-#include "stdafx.h"
-#include <stdio.h>
-
-#define true 1
-#define false 0
-typedef int bool;
-
-bool is_prime(int n)
+int hcf(int a, int h) 
 {
-	int divisor;
+    int temp; 
+    while(1)
+    {
+        temp = a%h;
+        if(temp==0)
+        return h;
+        a = h;
+        h = temp;
+    }
+} 
 
-	if (n <= 1)
-		return false;
-	for (divisor = 2; divisor * divisor <= n; divisor++)
-		if (n % divisor == 0)
-			return false;
-	return true;
-}
-
-int main(void)
+int main() 
 {
-	int n;
-	printf("Welcome to project H ");
-	printf("Enter a number: ");
-	scanf("%d", &n);
-	if (is_prime(n))
-		printf("Prime\n");
-	else 
-		printf("Not prime\n");
-	return 0;
+    int c,d,gcd; 
+    printf("enter two values to find for relative prime or co prime\n");
+    scanf("%d%d",&c,&d);
+    gcd=hcf(c,d);
+   
+    if(gcd==1) 
+    {
+        printf("\n%d and %d are relatively prime or co prime numbers .",c,d);
+    }
+    else
+    {
+        printf("\n%d and %d are not relatively prime or co prime numbers .",c,d);
+    }         
+    getch(); 
 }
