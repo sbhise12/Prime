@@ -22,7 +22,7 @@ bool is_prime(int n)
 int main(void)
 {
 	int n;
-
+	printf("Welcome to project H ");
 	printf("Enter a number: ");
 	scanf("%d", &n);
 	if (is_prime(n))
